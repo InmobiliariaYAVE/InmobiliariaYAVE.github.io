@@ -10,7 +10,7 @@ const terrenos = [
     universidad: "Las mejores universidades a solo 10 min",
     precio: 50000,
     img: "../Las_Cruces/img/Las_Cruces (7).jpeg",
-    pagina: "Las_Cruces/index.html"
+    pagina: "../Las_Cruces/"
   },
   {
     nombre: "Barrio Benito",
@@ -21,7 +21,7 @@ const terrenos = [
     medidas: "Desde 115.50m² hasta 150m²",
     precio: 169500,
     img: "Barrio_Benito/img/Barrio_Benito (1).jpeg",
-    pagina: "Barrio_Benito/index.html"
+    pagina: "../Barrio_Benito/"
   },
   {
     nombre: "Quinta Pascual",
@@ -32,7 +32,7 @@ const terrenos = [
     medidas: "Lotes desde 108m²",
     precio: "1700 el m²",
     img: "Quinta_Pascual/img/Quinta_Pascual (3).jpeg",
-    pagina: "Quinta_Pascual/index.html"
+    pagina: "../Quinta_Pascual/.html"
   },
   {
     nombre: "Rancho Santa Julia",
@@ -43,7 +43,7 @@ const terrenos = [
     medidas: "LOTES DE 150m²",
     precio: 150000 ,
     img: "Rancho_Santa_Julia/img/Rancho_Santa_Julia (17).jpeg",
-    pagina: "Rancho_Santa_Julia/index.html"
+    pagina: "../Rancho_Santa_Julia/.html"
   }
 ];
 
