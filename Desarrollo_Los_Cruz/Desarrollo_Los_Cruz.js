@@ -32,7 +32,7 @@ const terrenos = [
     medidas: "Lotes desde 108m²",
     precio: "1700 el m²",
     img: "Quinta_Pascual/img/Quinta_Pascual (3).jpeg",
-    pagina: "../Quinta_Pascual/.html"
+    pagina: "../Quinta_Pascual/"
   },
   {
     nombre: "Rancho Santa Julia",
@@ -43,7 +43,7 @@ const terrenos = [
     medidas: "LOTES DE 150m²",
     precio: 150000 ,
     img: "Rancho_Santa_Julia/img/Rancho_Santa_Julia (17).jpeg",
-    pagina: "../Rancho_Santa_Julia/.html"
+    pagina: "../Rancho_Santa_Julia/"
   }
 ];
 
@@ -69,4 +69,5 @@ terrenos.forEach(t => {
   `;
   catalogo.appendChild(card);
 });
+
 
