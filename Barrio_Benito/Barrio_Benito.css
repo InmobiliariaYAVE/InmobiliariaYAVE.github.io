@@ -348,13 +348,8 @@ footer {
 
 }
 
-/*--------para dispositivos----------*/
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
 
 .card {
   flex: 1 1 300px;
 }
+
