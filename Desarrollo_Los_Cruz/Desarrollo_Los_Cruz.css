@@ -242,3 +242,15 @@ footer {
   transform: scale(1.1);
 }
 
+/*--------para dispositivos----------*/
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 300px;
+}
+
+
