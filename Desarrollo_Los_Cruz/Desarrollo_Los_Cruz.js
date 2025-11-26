@@ -49,8 +49,12 @@ const terrenos = [
 
 const catalogo = document.getElementById("catalogo");
 terrenos.forEach(t => {
-  const card = document.createElement("div");
+  const card = document.createElement("a");
   card.className = "terreno";
+  card.href = t.pagina;
+  card.style.textDecoration = "none";
+  card.style.color = "inherit";
+
   card.innerHTML = `
     <img src="${t.img}" alt="${t.nombre}">
     <div class="info">
@@ -62,12 +66,12 @@ terrenos.forEach(t => {
         <p>🎓 ${t.universidad || ""}</p>
         <p>📐 ${t.medidas || ""}</p>
         <p>💰 Desde $${t.precio.toLocaleString()}</p>
-       
       </div>
-      <a href="${t.pagina}" class="button-56" role="button">Información</a>
     </div>
   `;
+  
   catalogo.appendChild(card);
 });
+
 
 
