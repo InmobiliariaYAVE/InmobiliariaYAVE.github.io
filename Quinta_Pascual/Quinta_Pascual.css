@@ -1,375 +1,351 @@
-/* =====================================================
-   GENERAL
-   ===================================================== */
-* { box-sizing:border-box; margin:0; padding:0; }
-body { background:#9494949b; color:#2c3e50; font-family: 'Roboto', sans-serif; }
+  /* =====================================================
+    GENERAL
+  ===================================================== */
+  * { box-sizing:border-box; margin:0; padding:0; }
 
-/* =====================================================
-   NAVBAR
-   ===================================================== */
-.navbar {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  background: transparent;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1000;
-  font-family: 'Playfair Display', serif;
-}
-.navbar.scrolled {
-  background: rgb(137, 92, 82);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-.navbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: color 0.3s;
-}
-.navbar a:hover { color: #f1c40f; }
-
-/* =====================================================
-   BANNER
-   ===================================================== */
-.hero {
-  position: relative;
-  background: url("img/Quinta_Pascual\ \(3\).jpeg") center/cover no-repeat;
-  height: 450px;
-  display:flex; 
-  justify-content:center; align-items:center;
-  color:white; text-align:center;
-}
-.hero::after {
-  content:"";
-  position:absolute; top:0; left:0; width:100%; height:100%;
-  background: rgba(0,0,0,0.5);
-}
-.hero-content { position:relative; z-index:2; width:90%; max-width:1200px; }
-.hero h1 { 
-  font-size:3.2em; 
-  margin-bottom:15px; 
-  font-family: 'Playfair Display', serif; 
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-}
-.hero p {
-  font-size: 1.5em;
-  font-style: italic;
-  font-family: 'Playfair Display', serif;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
-}
-
-/*------------------*/
-/* ===== FOOTER ===== */
-/*------------------*/
-footer {
-  background: #2c3e50;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* =====================================================
-   ESPECIFICACIONES
-   ===================================================== */
-.specs {
-  position: relative;
-  background-image: url("img/Quinta_Pascual\ \(1\).jpeg");  
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 30px 20px;
-  max-width: 1000px;
-  margin: 30px auto;
-  backdrop-filter: blur(4px);
-  overflow: hidden;
-}
-.specs::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 0;
-}
-.specs-card {
-  background: rgba(255, 255, 255, 0.80);
-  padding: 25px 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  max-width: 800px;
-  margin: 0 auto 30px auto;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-.specs-card h2 {
-  font-family: 'Playfair Display', serif;
-  color: #0f0606;
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-.specs-card p {
-  font-size: 1.1em;
-  line-height: 1.5;
-  color: #000000;
-  margin-bottom: 10px;
-}
-.specs-card p.restriction { font-size:0.9em; color:#051118; margin-bottom:20px; }
-
-.specs .benefits {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin-top: 20px;
-  position: relative;
-  z-index: 1;
-}
-.specs .benefit {
-  background: rgba(248, 245, 245, 0.8);
-  padding: 20px;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  opacity:1;               /* 👈 antes estaba en 0 */
-  transform: translateY(0); /* 👈 antes tenía 20px */
-}
-
-.specs .benefit.visible { opacity:1; transform: translateY(0); }
-.specs .benefit h3 { font-size:1.2em; color:#2c3e50; }
-.specs .benefit h3 span { color:#27ae60; }
-
-/* Botón WhatsApp */
-.button-56 {
-  align-items: center;
-  background-color: #fee6e3;
-  border: 2px solid #111;
-  border-radius: 8px;
-  box-sizing: border-box;
-  color: #111;
-  cursor: pointer;
-  display: flex;
-  font-family: 'Playfair Display', serif;
-  font-size: 16px;
-  height: 48px;
-  justify-content: center;
-  line-height: 24px;
-  max-width: 50%;
-  padding: 0 25px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-.button-56:after {
-  background-color: #111;
-  border-radius: 8px;
-  content: "";
-  display: block;
-  height: 48px;
-  left: 0;
-  width: 100%;
-  position: absolute;
-  top: -2px;
-  transform: translate(8px, 8px);
-  transition: transform .2s ease-out;
-  z-index: -1;
-}
-.button-56:hover:after { transform: translate(0, 0); }
-.button-56:active { background-color: #ffdeda; outline: 0; }
-.button-56:hover { outline: 0; }
-@media (min-width: 768px) { .button-56 { padding: 0 40px; } }
-
-/* =====================================================
-   GALERÍA
-   ===================================================== */
-.gallery { max-width:1000px; margin:40px auto; }
-.gallery h2 { font-family:'Playfair Display', serif; color:#27ae60; margin-bottom:20px; font-size:2em; text-align:center; }
-.gallery-grid {
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:15px;
-}
-.gallery-grid img {
-  width:100%;
-  height:200px;
-  object-fit:cover;
-  border-radius:10px;
-  cursor:pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.gallery-grid img:hover {
-  transform: scale(1.05);
-  box-shadow:0 8px 20px rgba(0,0,0,0.25);
-}
-
-/* =====================================================
-   LIGHTBOX
-   ===================================================== */
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9);
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-.lightbox img {
-  max-width: 80%;
-  max-height: 80%;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-  transition: transform 0.3s ease;
-}
-.lightbox .close,
-.lightbox .prev,
-.lightbox .next {
-  position: absolute;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  background: rgba(0,0,0,0.6);
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.lightbox .close { top: 30px; right: 30px; }
-.lightbox .prev { left: 20px; top: 50%; transform: translateY(-50%); }
-.lightbox .next { right: 20px; top: 50%; transform: translateY(-50%); }
-.lightbox .close:hover,
-.lightbox .prev:hover,
-.lightbox .next:hover { background: rgba(0,0,0,0.9); }
-
-/* =====================================================
-   MAPA
-   ===================================================== */
-#map-container img { 
-  border-radius: 15px;
-   transition: transform 0.2s ease;
-    cursor:pointer; 
+  /* 🔹 Fuente global igual que en tu sitio inicial */
+  body { 
+    background:#9494949b; 
+    color:#2c3e50; 
+    font-family: 'Poppins', sans-serif; 
   }
-  
-/* =====================================================
-   MEDIA QUERIES
-===================================================== */
-@media(max-width:900px){ .specs .benefits { grid-template-columns:repeat(2,1fr); } }
-@media(max-width:600px){ .specs .benefits, .gallery-grid { grid-template-columns:1fr; } .gallery-grid img { height:180px; }}
 
 
-/* =====================================================
-   VIDEO
-===================================================== */
 
-.video-thumb {
-  position: relative;
-  cursor: pointer;
-}
+  /* =====================================================
+    NAVBAR
+  ===================================================== */
+  .navbar {
+    position: fixed;
+    top:0; left:0;
+    width:100%;
+    padding:15px 30px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    background:transparent;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    z-index:1000;
+    font-family:'Poppins', serif;
+  }
+  .navbar.scrolled {
+    background: rgba(137, 92, 82);
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  }
+  .navbar a {
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    font-size:1.1rem;
+    transition:color 0.3s;
+  }
+  .navbar a:hover { color:#f1c40f; }
 
-.video-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
+  /* =====================================================
+    BANNER
+  ===================================================== */
+  .hero {
+    position: relative;
+    background: url("img/Quinta_Pascual\ \(3\).jpeg") center/cover no-repeat;
+    height: 450px;
+    display:flex;
+    justify-content:center;align-items:center;
+    color:white;text-align:center;
+  }
+  .hero::after {
+    content:"";
+    position:absolute;top:0; left:0;width:100%; height:100%;
+    background: rgba(0,0,0,0.5);
+  }
+  .hero-content {position:relative;z-index:2;width:90%;max-width:1200px;}
+  .hero h1 {
+    font-size:3.2em;
+    margin-bottom:15px;
+    text-shadow:2px 2px 6px rgba(0,0,0,0.1);
+  }
+  .hero p {
+    font-size:1.5em;
+    font-style:normal;
+    text-shadow:1px 1px 5px rgba(0,0,0,0.6);
+  }
 
-.video-thumb .play-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3em;
-  color: white;
-  text-shadow: 0 0 10px black;
-  pointer-events: none;
-}
-.gallery-item {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
+  /* =====================================================
+    FOOTER
+  ===================================================== */
+  footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+  }
 
-.gallery-item img {
-  display: block;
-  width: 100%;
-  border-radius: 10px;
-}
+  /* =====================================================
+    ESPECIFICACIONES
+  ===================================================== */
+  .specs {
+    position:relative;
+    background-image: url("img/Quinta_Pascual\ \(1\).jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    padding:30px 20px;
+    max-width:1000px;
+    margin:30px auto;
+    backdrop-filter:blur(4px);
+    overflow:hidden;
+  }
+  .specs::before {
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.35);
+    z-index:0;
+  }
+  .specs-card {
+    background: rgba(255,255,255,0.8);
+    padding:25px 30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    max-width:800px;
+    margin:0 auto 30px auto;
+    text-align:center;
+    position:relative;
+    z-index:1;
+  }
+  .specs-card h2 {
+    color:#0f0606;
+    font-size:2em;
+    margin-bottom:20px;
+  }
+  .specs-card p {
+    font-size:1.1em;
+    line-height:1.5;
+    color:#000000;
+    margin-bottom:10px;
+  }
+  .specs-card p.restriction {font-size:0.9em; color:#051118; margin-bottom:20px;}
 
-/* 🔹 Ícono de play sobre los videos */
-.gallery-item[data-type="video"]::after {
-  content: "▶";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 50px;
-  color: white;
-  text-shadow: 0 0 10px rgba(0,0,0,0.6);
-  opacity: 0.8;
-  transition: opacity 0.3s;
-}
+  .specs .benefits {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:15px;
+    margin-top:20px;
+    position:relative;
+    z-index:1;
+  }
+  .specs .benefit {
+    background: rgba(248,245,245,0.8);
+    padding:20px;
+    border-radius:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    opacity:1;
+    transform: translateY(20px);
+  }
+  .specs .benefit.visible { opacity:1; transform:translateY(0); }
+  .specs .benefit h3 {font-size:1.2em;color:#2c3e50;}
+  .specs .benefit h3 span { color:#27ae60; }
 
-/* Efecto hover */
-.gallery-item[data-type="video"]:hover::after {
-  opacity: 1;
-}
+  /*BOTÓN WHATSAPP*/
+  .button-56 {
+    align-items:center;
+    background-color:#fee6e3;
+    border:2px solid #111;
+    border-radius:8px;
+    box-sizing:border-box;
+    color:#111;
+    cursor:pointer;
+    display:flex;
+    font-family:'Poppins', serif;
+    font-size:16px;
+    height:48px;
+    justify-content:center;
+    line-height:24px;
+    max-width:50%;
+    padding:0 25px;
+    position:relative;
+    text-align:center;
+    text-decoration:none;
+    user-select:none;
+    -webkit-user-select:none;
+    touch-action:manipulation;
+  }
+  .button-56:after {
+    background-color:#111;
+    border-radius:8px;
+    content:"";
+    display:block;
+    height:48px;
+    left:0;
+    width:100%;
+    position:absolute;
+    top:-2px;
+    transform:translate(8px,8px);
+    transition: transform .2s ease-out;
+    z-index:-1;
+  }
+  .button-56:hover:after { transform: translate(0, 0); }
+  .button-56:active { background-color: #ffdeda; outline: 0; }
+  .button-56:hover { outline: 0; }
+  @media (min-width: 768px) { .button-56 { padding: 0 40px; } }
 
-.redes-flotantes {
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  z-index: 1000;
-}
+  /* =====================================================
+    GALERÍA
+  ===================================================== */
+  .gallery { max-width:1000px; margin:40px auto; }
+  .gallery h2 { color:#27ae60; margin-bottom:20px; font-size:2em; text-align:center; }
+  .gallery-grid {
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:15px;
+  }
+  .gallery-grid img {
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .gallery-grid img:hover {
+    transform:scale(1.05);
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  }
 
-.redes-flotantes a img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  background-color: white;
-  transition: all 0.3s ease;
-}
+  /* =====================================================
+    LIGHTBOX
+  ===================================================== */
+  .lightbox {
+    display:none;
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+  }
+  .lightbox img {
+    max-width:80%;
+    max-height:80%;
+    border-radius:10px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+  }
+  .lightbox .close, 
+  .lightbox .prev,
+  .lightbox .next {
+    position:absolute;
+    color:white;
+    font-size:1.5rem;
+    font-weight:bold;
+    background: rgba(0,0,0,0.6);
+    border-radius:50%;
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition: all 0.3s ease;
+  }
+  .lightbox .close { top:30px; right:30px; }
+  .lightbox .prev { left:20px; top:50%; transform:translateY(-50%); }
+  .lightbox .next { right:20px; top:50%; transform:translateY(-50%); }
+  .lightbox .close:hover, 
+  .lightbox .prev:hover, 
+  .lightbox .next:hover { background: rgba(39,174,96,0.9); }
 
-.redes-flotantes a img:hover {
-  transform: scale(1.15);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-}
+  /* =====================================================
+    MAPA
+  ===================================================== */
+  #map-container img {
+    border-radius:15px;
+    transition: transform 0.2s ease;
+    cursor:pointer;
+  }
 
-/*--------footer redes sociales----------*/
-.contactos-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px; /* espacio entre iconos */
-  margin-top: 10px;
-}
+  /* =====================================================
+    MEDIA QUERIES
+  ===================================================== */
+  @media(max-width:900px){ .specs .benefits { grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:600px){ .specs .benefits, .gallery-grid { grid-template-columns:1fr; } .gallery-grid img { height:180px; }}
 
-.contactos-footer img {
-  width: 50px;
-  height: 50px;
-  transition: transform 0.3s ease;
-}
+  /* =====================================================
+    VIDEO
+  ===================================================== */
 
-.contactos-footer img:hover {
-  transform: scale(1.1);
+  .video-thumb {
+    position: relative;
+    cursor: pointer;
+  }
 
-}
+  .video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
 
+  .video-thumb .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    color: white;
+    text-shadow: 0 0 10px black;
+    pointer-events: none;
+  }
+  .gallery-item {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .gallery-item img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  /* 🔹 Ícono de play sobre los videos */
+  .gallery-item[data-type="video"]::after {
+    content: "▶";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+
+  /* Efecto hover */
+  .gallery-item[data-type="video"]:hover::after {
+    opacity: 1;
+  }
+
+  /*--------footer redes sociales----------*/
+  .contactos-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .contactos-footer img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+  }
+
+  .contactos-footer img:hover {
+    transform: scale(1.1);
+  }
