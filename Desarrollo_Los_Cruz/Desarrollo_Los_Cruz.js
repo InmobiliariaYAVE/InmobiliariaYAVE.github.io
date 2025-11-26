@@ -9,7 +9,7 @@ const terrenos = [
     medidas: "120m²",
     universidad: "Las mejores universidades a solo 10 min",
     precio: 50000,
-    img: "../Las_Cruces/img/Las_Cruces (7).jpeg",
+    img: "Las_Cruces/img//Las_Cruces (7).jpeg",
     pagina: "../Las_Cruces/"
   },
   {
@@ -46,7 +46,6 @@ const terrenos = [
     pagina: "../Rancho_Santa_Julia/"
   }
 ];
-
 const catalogo = document.getElementById("catalogo");
 terrenos.forEach(t => {
   const card = document.createElement("a");
@@ -72,6 +71,3 @@ terrenos.forEach(t => {
   
   catalogo.appendChild(card);
 });
-
-
-
