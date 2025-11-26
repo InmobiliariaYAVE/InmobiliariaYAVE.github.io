@@ -36,7 +36,7 @@
     color:white;
     text-decoration:none;
     font-weight:500;
-    font-size:.9rem;
+    font-size:1rem;
     transition:color 0.3s;
   }
   .navbar a:hover { color:#f1c40f; }
@@ -349,3 +349,4 @@
   .contactos-footer img:hover {
     transform: scale(1.1);
   }
+
