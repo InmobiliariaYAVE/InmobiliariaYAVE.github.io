@@ -35,7 +35,7 @@ const terrenos = [
     pagina: "../Quinta_Pascual/"
   },
   {
-    nombre: "Rancho Santa Julia",
+    nombre: "Rancho Santa",
     detalle: "Ejido con dominio pleno",
     ubicacion: "A 400mts. de la carr. Pachuca-Actopan",
     ubicacion_2: "A 12 minutos de Pachuca Centro",
@@ -71,3 +71,4 @@ terrenos.forEach(t => {
   
   catalogo.appendChild(card);
 });
+
